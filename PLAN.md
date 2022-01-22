@@ -1,0 +1,11 @@
+## PLAN - MANAGE YOUR MONEY
+- [x] Setup project
+- [x] Install: tailwind css, font, icofont
+- [x] Install: firebase
+- [x] Firebase wrap App (khi firebase request lần đâu tiên xong thì mới khởi tạo app)
+- [x] Build Index page
+- [x] Build: Login page & Register page
+- [x] Router Guards
+- [x] Build commponents: Navigation Top & Navigation Bottom
+- [] Build: Homepage
+- [] Build: quản lý chi - tiêu, kế hoạch tiết kiệm
