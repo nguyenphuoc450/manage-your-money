@@ -8,7 +8,7 @@
       >
           <input 
             type="text" 
-            placeholder="Name"
+            placeholder="Tên"
             class="border-2 border-gray outline-none rounded"
             v-model="name"
           >
@@ -20,7 +20,7 @@
           >
           <input 
             type="password" 
-            placeholder="Password"
+            placeholder="Mật khẩu"
             class="border-2 border-gray outline-none rounded"
             v-model="password"
           >
@@ -72,23 +72,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.form {
-    padding: 24px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
 
-    input {
-        padding: 12px;
-        transition: all ease 0.3s;
-        &:focus {
-            border-color: $primary-color;
-        }
-    }
-    .btn {
-        background-color: $primary-color;
-        padding: 12px 0;
-        color: #fff;
-    }
-}
 </style>

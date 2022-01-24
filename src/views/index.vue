@@ -33,13 +33,33 @@ export default {
 
 <style lang="scss" scoped>
 .links {
-    padding: 12px 24px;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 45% 10% 45%;
+    align-items: center;
+
     &-item {
-        display: block;
+        width: 100%;
         margin: 0 auto;
         padding: 12px 0;
 
+        background-color: transparent;
+        color: #000;
+        border: 1px solid $color-gray;
+
         text-align: center;
+        transition: all ease 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #0151fe;
+            border-color: transparent;
+            color: #fff;
+        }
+    }
+
+    p {
+        font-weight: 700;
     }
 }
 </style>

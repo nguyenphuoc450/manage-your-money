@@ -1,6 +1,6 @@
 <template>
-  <section class="nav-top shadow-md">
-      <div class="nav-top__icon-back" @click="goHome">
+  <section class="nav-top shadow-sm">
+      <div class="nav-top__icon-back" @click="goBack">
           <i class="icofont-arrow-left"></i>
       </div>
   </section>
@@ -16,12 +16,12 @@ export default {
     setup () {
         const router = useRouter()
 
-        function goHome() {
-            router.push({name: 'Home'})
+        function goBack() {
+            router.go(-1)
         }
 
         return {
-            goHome
+            goBack
         }
     }
 }
@@ -30,7 +30,7 @@ export default {
 <style lang="scss" scoped>
 .nav-top {
     padding: 6px 12px;
-    background-color: $primary-color;
+    background-color: #fff;
 
     display: flex;
     justify-content: space-between;
@@ -39,10 +39,11 @@ export default {
     position: sticky;
     top: 0;
     
-    color: #fff;
+    color: $primary-color;
     font-size: 24px;
 
     &__icon-back, &__icon-notify {
+        width: 60px;
         cursor: pointer;
     }
 }
