@@ -1,5 +1,5 @@
 <template>
-  <div id="index">
+  <div id="index fadeIn">
     <div class="container">
         <BrandImage/>
         <h2 class="title">Manage Your Money</h2>
@@ -7,13 +7,13 @@
             <router-link 
                 :to="{name: 'Login'}" 
                 class="links-item bg-primary text-white rounded">
-                    Login
+                    Đăng nhập
             </router-link>
             <p class="text-center my-2">OR</p>
             <router-link 
                 :to="{name: 'Register'}" 
                 class="links-item bg-primary text-white rounded">
-                    Register
+                    Đăng ký
             </router-link>
         </div>
     </div>

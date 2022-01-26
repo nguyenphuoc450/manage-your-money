@@ -1,5 +1,5 @@
 <template>
-  <div class="profile">
+  <div class="profile fadeIn">
       <NavigationTop/>
       <div class="container">
         <div class="info">
@@ -14,7 +14,7 @@
                 {{userCurrent.email}}
             </span>
         </div>
-        <div class="btn btn-update-avatar rounded" @click="openPopup">
+        <div class="btn btn-update-avatar rounded" @click="isPopup = true">
             <i class="icofont-refresh"></i>
             <span>Cập nhật ảnh đại diện</span>
             <div class="popup" v-if="isPopup">
@@ -46,7 +46,7 @@ import {useRouter} from 'vue-router'
 import {ref} from 'vue'
 import NavigationTop from '../components/NavigationTop.vue'
 import NavigationBottom from '../components/NavigationBottom.vue'
-import {getUser} from '../composables/getUser'
+import {useUser} from '../composables/useUser'
 import {useUpdateProfile} from '../composables/useUpdateProfile'
 import firebase from 'firebase'
 
@@ -57,7 +57,7 @@ export default {
         NavigationBottom
     },
     setup () {
-        const {userCurrent} = getUser()
+        const {userCurrent} = useUser()
         const router = useRouter()
 
         // Logout
@@ -71,10 +71,6 @@ export default {
         const fileAvatar = ref('')
         const {error, isPending, updateAvatar} = useUpdateProfile()
 
-        function openPopup() {
-            isPopup.value = true
-        }
-
         async function handleUpdateAvatar() {
             await updateAvatar(fileAvatar.value)
             isPopup.value = false
@@ -85,7 +81,6 @@ export default {
             userCurrent,
             logout,
             isPopup,
-            openPopup,
             fileAvatar,
             error,
             isPending,

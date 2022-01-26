@@ -1,7 +1,7 @@
 <template>
   <div class="home">
   <TopHeader/>
-  <div class="container">
+  <div class="container fadeIn">
     <CardList/>
   </div>
   <NavigationBottom/>

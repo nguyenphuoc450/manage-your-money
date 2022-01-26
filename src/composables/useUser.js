@@ -7,6 +7,6 @@ firebase.auth().onAuthStateChanged((user) => {
     if(user) userCurrent.value = user
 }) 
 
-export function getUser() {
+export function useUser() {
     return {userCurrent}
 }

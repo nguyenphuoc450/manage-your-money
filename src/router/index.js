@@ -56,7 +56,13 @@ const routes = [
   {
     path: '/budget',
     name: 'Budget',
-    component: () => import(/* webpackChunkName: "budget" */ '../views/Budget.vue'),
+    component: () => import(/* webpackChunkName: "budget" */ '../views/Budget/Budget.vue'),
+    beforeEnter: requireAuth
+  },
+  {
+    path: '/budget/new',
+    name: 'NewBudget',
+    component: () => import(/* webpackChunkName: "new-budget" */ '../views/Budget/NewBudget.vue'),
     beforeEnter: requireAuth
   },
   {

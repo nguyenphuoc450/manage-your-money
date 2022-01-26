@@ -16,12 +16,12 @@
 </template>
 
 <script>
-import {getUser} from '../../composables/getUser'
+import {useUser} from '../../composables/useUser'
 
 export default {
     name: 'TopHeader',
     setup () {
-        const {userCurrent} = getUser()
+        const {userCurrent} = useUser()
 
         return {
             userCurrent,

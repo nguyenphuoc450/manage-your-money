@@ -1,5 +1,5 @@
 <template>
-  <div class="reset-password">
+  <div class="reset-password fadeIn">
       <NavigationTop/>
       <h2 class="title">Đổi mật khẩu</h2>
       <form 

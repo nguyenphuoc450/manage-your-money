@@ -89,6 +89,7 @@ export default {
       height: 2px;
 
       background-color: $primary-color;
+      border-radius: 4px;
   }
 }
 </style>

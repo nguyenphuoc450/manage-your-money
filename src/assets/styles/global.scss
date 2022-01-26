@@ -3,10 +3,17 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #F8F9FF;
 }
+
+/******************** Color ********************/
 $primary-color: #4D84FE;
-$color-dark-blue: #18284A;
+$primary-color-hover: #0151fe;
+$color-dark-blue: #18284A;;
 $color-gray: #959CAE;
 $color-dark-gray: #e0e0e0;
+$color-red: rgb(239, 68, 68);
+$color-green: #4CAF50;
+$color-green-hover: #3e8e41;
+/*******************************************/
 
 .container {
     margin: 0 auto;
@@ -22,7 +29,13 @@ $color-dark-gray: #e0e0e0;
 
 .error-message {
     margin-bottom: 6px;
-    color: rgb(239, 68, 68);
+    color: $color-red;
+    text-align: center;
+}
+
+.success-message {
+    margin-bottom: 6px;
+    color: rgb(22, 163, 74);
     text-align: center;
 }
 
@@ -32,9 +45,11 @@ $color-dark-gray: #e0e0e0;
     display: flex;
     flex-direction: column;
 
-    input {
+    input, select {
         padding: 12px;
 
+        background-color: #fff;
+        outline: none;
         border: 2px solid rgb(229, 231, 235);
         border-radius: 4px;
         transition: all ease 0.3s;
@@ -42,6 +57,9 @@ $color-dark-gray: #e0e0e0;
         &:focus {
             border-color: $primary-color;
         }
+    }
+    input[type=number]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
     }
 }
 .btn {
@@ -54,7 +72,7 @@ $color-dark-gray: #e0e0e0;
     cursor: pointer;
 
     &:hover {
-        background-color: #0151fe;
+        background-color: $primary-color-hover;
     }
 }
 
@@ -70,6 +88,10 @@ $color-dark-gray: #e0e0e0;
 }
 
 // Animation
+.fadeIn {
+    animation: fadeIn linear 0.3s;
+}
+
 @keyframes fadeIn {
     0% {
         opacity: 0;

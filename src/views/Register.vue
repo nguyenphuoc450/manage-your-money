@@ -1,9 +1,9 @@
 <template>
   <div class="container">
       <BrandImage/>
-      <h2 class="title">Register</h2>
+      <h2 class="title fadeIn">Đăng ký</h2>
       <form 
-            class="form"
+            class="form fadeIn"
             @submit.prevent="onSubmit"
       >
           <input 
@@ -24,12 +24,12 @@
             class="border-2 border-gray outline-none rounded"
             v-model="password"
           >
-          <button v-if="!isPending" class="btn my-6 rounded">Register</button>
+          <button v-if="!isPending" class="btn my-6 rounded">Đăng ký</button>
           <button v-else disabled class="btn cursor-not-allowed my-6 bg-gray-900 rounded">Loading...</button>
           <p class="error-message">{{error}}</p>
           <p class="text-center">
-              You have account? 
-              <router-link :to="{name: 'Login'}" class="text-primary underline">Login here</router-link>
+              Bạn đã có tài khoản?
+              <router-link :to="{name: 'Login'}" class="text-primary underline">Đăng nhập tại đây</router-link>
           </p>
       </form>
   </div>

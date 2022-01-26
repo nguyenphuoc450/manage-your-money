@@ -1,7 +1,7 @@
 <template>
   <div>
       <NavigationTop/>
-      Saving
+      Tiết kiệm theo kế hoạch
   </div>
 </template>
 
