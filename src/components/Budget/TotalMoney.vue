@@ -2,16 +2,17 @@
   <div class="list-total">
     <div class="total-money shadow-sm">
         <h2>Tổng tiền:</h2>
-        <span :class="[totalMoney < 0 ? 'warning' : '' ]">{{formatMoney(totalMoney)}}</span>
+        <span class="safe" v-if="totalMoney > 0">+{{formatMoney(totalMoney)}}</span>
+        <span class="warning" v-else>{{formatMoney(totalMoney)}}</span>
     </div>
     <div class="grid">
         <div class="total-earning shadow-sm">
             <h2>Tổng khoản thu:</h2>
-            <span>{{formatMoney(totalEarning)}}</span>
+            <span class="safe">+{{formatMoney(totalEarning)}}</span>
         </div>
         <div class="total-spending shadow-sm">
             <h2>Tổng khoản chi:</h2>
-            <span>{{formatMoney(totalSpending)}}</span>
+            <span class="warning">-{{formatMoney(totalSpending)}}</span>
         </div>
     </div>
   </div>
@@ -98,6 +99,9 @@ export default {
     }
     .warning {
         color: $color-red;
+    } 
+    .safe {
+        color: $color-green;
     }
 }
 </style>

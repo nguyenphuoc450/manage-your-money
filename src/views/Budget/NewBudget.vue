@@ -1,38 +1,44 @@
 <template>
     <NavigationTop/>
   <div class="new-budget fadeIn">
-      <h2 class="title">Tạo mới khoản thu/ khoản chi</h2>
-      <form class="form" @submit.prevent="createNewBudget">
-          <select id="type" v-model="form.type">
-              <option value="spending">Khoản chi</option>
-              <option value="earning">Khoản thu</option>
-          </select>
-          <input type="date" class="my-3" v-model="form.date">
-          <input type="number" placeholder="Số tiền" v-model="form.money">
-          <select id="spending" class="my-3" 
-            v-if="form.type === 'spending'"
-            v-model="form.option"
-          >
-              <option value="">Chọn</option>
-              <option v-for="s in spendingOptions" :key="s.value" :value="s.value">
-                  {{s.name}}
-              </option>
-          </select>
-          <select id="earning" class="my-3" 
-            v-if="form.type === 'earning'"
-            v-model="form.option"
-          >
-              <option value="">Chọn</option>
-              <option v-for="e in earningOptions" :key="e.value" :value="e.value">
-                  {{e.name}}
-              </option>
-          </select>
-          <input type="text" placeholder="Ghi chú" class="mb-3" v-model="form.note">
-          <button class="btn" v-if="!isPending">Tạo mới</button>
-          <button class="btn" v-if="isPending">Loading...</button>
-          <p :class="[message === 'Đã thêm thành công.' ? 'success-message' : 'error-message']">{{message}}</p>
-          <p class="error-message">{{error}}</p>
-      </form>
+      <div class="container">
+        <h2 class="title">Tạo mới khoản thu/ khoản chi</h2>
+        <form class="form" @submit.prevent="createNewBudget">
+            <select id="type" v-model="form.type">
+                <option value="spending">Khoản chi</option>
+                <option value="earning">Khoản thu</option>
+            </select>
+            <input type="date" class="my-3" v-model="form.date">
+            <input type="number" placeholder="Số tiền" v-model="form.money">
+            <select id="spending" class="my-3" 
+                v-if="form.type === 'spending'"
+                v-model="form.option"
+            >
+                <option value="">Chọn</option>
+                <option v-for="s in spendingOptions" :key="s.value" :value="s.value">
+                    {{s.name}}
+                </option>
+            </select>
+            <select id="earning" class="my-3" 
+                v-if="form.type === 'earning'"
+                v-model="form.option"
+            >
+                <option value="">Chọn</option>
+                <option v-for="e in earningOptions" :key="e.value" :value="e.value">
+                    {{e.name}}
+                </option>
+            </select>
+            <input type="text" placeholder="Ghi chú" class="mb-3" v-model="form.note">
+            <button class="btn" v-if="!isPending">Tạo mới</button>
+            <button class="btn" v-if="isPending">Loading...</button>
+            <p 
+                :class="[message === 'Đã thêm thành công.' ? 'success-message' : 'error-message']"
+            >
+                {{message}}
+            </p>
+            <p class="error-message">{{error}}</p>
+        </form>
+      </div>
   </div>
 </template>
 
@@ -97,6 +103,10 @@ export default {
                     form.value.money = ''
                     form.value.option = ''
                     form.value.note = ''
+
+                    setTimeout(()=> {
+                        message.value = ''
+                    }, 3000)
                 }
             }
         }
