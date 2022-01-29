@@ -2,7 +2,7 @@
   <div class="list-total">
     <div class="total-money shadow-sm">
         <h2>Tổng tiền:</h2>
-        <span class="safe" v-if="totalMoney > 0">+{{formatMoney(totalMoney)}}</span>
+        <span class="safe" v-if="totalMoney >= 0">+{{formatMoney(totalMoney)}}</span>
         <span class="warning" v-else>{{formatMoney(totalMoney)}}</span>
     </div>
     <div class="grid">

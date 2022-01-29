@@ -70,6 +70,13 @@ const routes = [
     name: 'SavingsPlans',
     component: () => import(/* webpackChunkName: "savings-plans" */ '../views/SavingsPlans.vue'),
     beforeEnter: requireAuth
+  },
+  {
+    path: '/budget/:id',
+    name: 'BudgetDetail',
+    component: () => import(/* webpackChunkName: "budget-detail" */ '../views/Budget/BudgetDetail.vue'),
+    props: true,
+    beforeEnter: requireAuth
   }
 ]
 

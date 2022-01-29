@@ -48,7 +48,12 @@
                 {{formatTextOption(item.data().option)}}
             </span>
             <span class="hidden">{{item.data().note}}</span>
-            <span class="btn-delete" @click="deleteBudget(item.id)">Xóa</span>
+            <div class="actions">
+                <router-link :to="{name: 'BudgetDetail', params: {id: item.id}}" class="btn-item btn-edit">
+                    Sửa
+                </router-link>
+                <span class="btn-item btn-delete" @click="deleteBudget(item.id)">Xóa</span>
+            </div>
         </div>
     </div>
     <p class="none-item" v-else>Chưa có thông tin.</p>
@@ -196,19 +201,33 @@ export default {
         color: $color-green;
     }
 
-    .btn-delete {
-        width: 60px;
-        margin: 0 auto;
+    .actions {
+        display: flex;
+        justify-content: center;
 
-        border: 1px solid $color-gray;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: all ease 0.3s;
+        .btn-item {
+            padding: 6px 12px;
+            border: 1px solid $color-gray;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all ease 0.3s;
 
-        &:hover {
-            color: #fff;
-            border-color: transparent;
-            background-color: $color-red;
+            &:hover {
+                color: #fff;
+                border-color: transparent;
+            }
+        }
+        .btn-edit {
+            &:hover {
+                background-color: $color-orange;
+            }
+        }
+        .btn-delete {
+            margin-left: 12px;
+    
+            &:hover {
+                background-color: $color-red;
+            }
         }
     }
 }
@@ -217,5 +236,20 @@ export default {
 
     font-style: italic;
     text-align: center;
+}
+
+// Responsive
+@media screen and (max-width: 768px) {
+    .item {
+        .actions {
+            flex-wrap: wrap;
+            align-items: center;
+            
+            .btn-delete {
+                margin-left: 0;
+                margin-top: 6px;
+            }
+        }
+    }
 }
 </style>
