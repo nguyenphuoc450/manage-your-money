@@ -245,6 +245,11 @@ export default {
             flex-wrap: wrap;
             align-items: center;
             
+            .btn-item {
+                width: 100%;
+                text-align: center;
+            }
+
             .btn-delete {
                 margin-left: 0;
                 margin-top: 6px;

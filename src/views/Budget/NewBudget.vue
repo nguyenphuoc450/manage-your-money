@@ -4,10 +4,16 @@
       <div class="container">
         <h2 class="title">Tạo mới khoản thu/ khoản chi</h2>
         <form class="form" @submit.prevent="createNewBudget">
-            <select id="type" v-model="form.type">
-                <option value="spending">Khoản chi</option>
-                <option value="earning">Khoản thu</option>
-            </select>
+            <div class="input-group">
+                <div class="input-group__radio">
+                    <input type="radio" name="type" value="spending" id="spending" v-model="form.type">
+                    <label for="spending">Khoản chi</label>
+                </div>
+                <div class="input-group__radio">
+                    <input type="radio" name="type" value="earning" id="earning" v-model="form.type">
+                    <label for="earning">Khoản thu</label>
+                </div>
+            </div>
             <input type="date" class="my-3" v-model="form.date">
             <input type="number" placeholder="Số tiền" v-model="form.money">
             <select id="spending" class="my-3" 
@@ -130,5 +136,20 @@ export default {
 }
 .error-message, .success-message {
     margin-top: 6px;
+}
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+
+    &__radio {
+        display: flex;
+        align-items: center;
+        margin-right: 12px;
+
+        label {
+            margin-left: 6px;
+        }
+    }
 }
 </style>
