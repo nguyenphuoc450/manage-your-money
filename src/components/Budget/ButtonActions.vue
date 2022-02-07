@@ -4,7 +4,7 @@
             <i class="icofont-ui-add"></i>
             <span>Tạo mới</span>
         </router-link>
-        <div class="btn-refresh" @click="getBudget">Cập nhật</div>
+        <div class="btn-refresh" @click="getBudget">Làm mới</div>
     </div>
 </template>
 

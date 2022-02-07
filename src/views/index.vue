@@ -9,7 +9,7 @@
                 class="links-item bg-primary text-white rounded">
                     Đăng nhập
             </router-link>
-            <p class="text-center my-2">OR</p>
+            <p class="text-center my-2">Hoặc</p>
             <router-link 
                 :to="{name: 'Register'}" 
                 class="links-item bg-primary text-white rounded">
@@ -33,12 +33,15 @@ export default {
 
 <style lang="scss" scoped>
 .links {
+    width: 100%;
+    margin: 0 auto;
     padding: 24px;
-    display: grid;
-    grid-template-columns: 45% 10% 45%;
+    // display: grid;
+    // grid-template-columns: 45% 10% 45%;
     align-items: center;
 
     &-item {
+        display: block;
         width: 100%;
         margin: 0 auto;
         padding: 12px 0;
@@ -60,6 +63,12 @@ export default {
 
     p {
         font-weight: 700;
+    }
+}
+// Responsive
+@media screen and (min-width: 768px) {
+    .links {
+        width: 50%;
     }
 }
 </style>

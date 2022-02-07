@@ -141,7 +141,7 @@ export default {
     display: flex;
     align-items: center;
     margin-bottom: 12px;
-
+    
     &__radio {
         display: flex;
         align-items: center;
@@ -149,6 +149,7 @@ export default {
 
         label {
             margin-left: 6px;
+            cursor: pointer;
         }
     }
 }
