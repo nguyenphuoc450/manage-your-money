@@ -1,7 +1,7 @@
 # manage-your-money
 View on: https://nguyenphuoc450.github.io/MYM/ \
-Overview: use Vue3, VueRouter, Firebase (auth, CRUD) \
-Feature: Login, Register, Reset Password,  CRUD (earning, spending)
+Overview: Login, Register, Reset Password,  CRUD (earning, spending)   \
+Use: Vue3, VueRouter, Firebase (auth, CRUD)
 ## Project setup
 ```
 yarn install
